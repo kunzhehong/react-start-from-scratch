@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { Routes, Route, useRoutes } from "react-router-dom";
-import { Home } from './components/Home';
-import { About } from './components/About';
+import { Routes, Route } from "react-router-dom";
 import { NavMenu } from './components/NavMenu';
-
+import { MyRoute } from './components/MyRoute';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -20,16 +18,3 @@ export default class App extends Component {
   }
 }
 
-function MyRoute() {
-  // by using useRoutes hook, we don't need to declare react Class Component, but instead by function Component
-  /* hook limitation: only can use in first layer of Component*/
-  let element = useRoutes([
-    {
-      path: "/",
-      element: <Home />,
-    },
-    { path: "/about", element: <About /> },
-  ]);
-
-  return element;
-}
